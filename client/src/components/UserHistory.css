@@ -1,0 +1,111 @@
+/* UserHistory.css */
+
+:root {
+  --primary-color: #2e7d32;
+  --bg-light: #f4fbf5;
+  --border-color: #e2f0e3;
+  --text-main: #2c3e50;
+  --text-muted: #546e7a;
+}
+
+.history-container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  margin-top: 2rem;
+  border: 1px solid var(--border-color);
+  animation: fadeIn 0.5s ease-out;
+}
+
+.history-container h2 {
+  color: var(--primary-color);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.no-records {
+  text-align: center;
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 2rem 0;
+}
+
+/* Responsive Table Wrapper */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+/* Table Styling */
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 800px; /* Forces scrolling on small screens instead of squishing data */
+}
+
+.history-table th,
+.history-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-main);
+}
+
+.history-table th {
+  background-color: var(--bg-light);
+  color: var(--primary-color);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.history-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.history-table tbody tr:hover {
+  background-color: #f9fdfa;
+}
+
+/* Specific Cell Styling */
+.month-cell {
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.total-cell {
+  font-weight: bold;
+}
+
+.money-cell {
+  color: #d9534f;
+  font-weight: bold;
+}
+
+/* Eco Score Badge */
+.eco-badge {
+  padding: 0.3rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.eco-badge.good {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.eco-badge.bad {
+  background-color: #fbebeb;
+  color: #d9534f;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

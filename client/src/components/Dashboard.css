@@ -1,0 +1,123 @@
+/* Dashboard.css */
+
+:root {
+  --primary-color: #2e7d32;
+  --primary-hover: #1b5e20;
+  --card-bg: #ffffff;
+  --text-main: #2c3e50;
+  --text-muted: #546e7a;
+  --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.3s;
+}
+
+/* Main Layout */
+.dashboard {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Loading State (While waiting for ASP.NET Core API) */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* Responsive Grid for Summary Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+/* Individual Summary Card */
+.card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  border-top: 4px solid var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.card h3 {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card p {
+  color: var(--text-main);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Thematic Colors for Specific Cards */
+.card.emission { border-top-color: #d9534f; } /* Red for emissions */
+.card.eco { border-top-color: #5cb85c; }      /* Green for eco score */
+.card.money { border-top-color: #f0ad4e; }    /* Orange for money */
+
+/* History Toggle Button Styling */
+.history-controls button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color var(--transition-speed) ease, transform 0.2s ease;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1rem;
+}
+
+.history-controls button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 1rem;
+  }
+  
+  .card p {
+    font-size: 2rem;
+  }
+}

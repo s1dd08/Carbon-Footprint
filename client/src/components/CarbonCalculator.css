@@ -1,0 +1,152 @@
+/* CarbonCalculator.css */
+
+:root {
+  --primary-color: #2e7d32;
+  --primary-hover: #1b5e20;
+  --bg-gradient-start: #e8f5e9;
+  --bg-gradient-end: #c8e6c9;
+  /* NEW: Changed from pure white to a mild, soft mint/earthy background */
+  --card-bg: #f4fbf5; 
+  --text-main: #2c3e50;
+  --text-muted: #546e7a;
+  --border-color: #cfd8dc;
+  --focus-ring: rgba(46, 125, 50, 0.25);
+}
+
+/* Global background for the page hosting the calculator */
+body {
+  background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Main Card Container */
+.calculator-container {
+  background-color: var(--card-bg);
+  /* A very subtle inner border to define the shape against the mild background */
+  border: 1px solid #e2f0e3; 
+  width: 100%;
+  max-width: 550px;
+  padding: 2.5rem;
+  border-radius: 16px;
+  /* Softened the shadow slightly to match the mild background */
+  box-shadow: 0 8px 24px rgba(46, 125, 50, 0.06);
+  box-sizing: border-box;
+  animation: slideUp 0.5s ease-out;
+}
+
+.calculator-container h2 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+/* Form Layout */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Input & Select Styling */
+/* Input & Select Styling */
+.form input,
+.form select {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  /* NEW: Pure white background so they pop against the mild card background */
+  background-color: #ffffff; 
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Focus Transitions */
+.form input:focus,
+.form select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+/* Button Styling & Animations */
+.form button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.form button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+}
+
+.form button:active {
+  transform: translateY(0);
+}
+
+/* Results Section */
+.result {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #f9fbf9;
+  border: 1px solid #dcedc8;
+  border-radius: 12px;
+  color: var(--text-main);
+  animation: fadeIn 0.5s ease-in;
+}
+
+.result h3 {
+  margin-top: 0;
+  color: var(--primary-color);
+  border-bottom: 2px solid #dcedc8;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.result p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+/* Smooth Entrance Animations */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+  .calculator-container {
+    padding: 1.5rem;
+  }
+  
+  .form button {
+    font-size: 1rem;
+  }
+}

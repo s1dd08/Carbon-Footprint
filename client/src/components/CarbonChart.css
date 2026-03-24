@@ -1,0 +1,39 @@
+/* CarbonChart.css */
+
+.chart-container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid #cfd8dc;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.chart-wrapper {
+  position: relative;
+  height: 350px; /* Fixed height so the chart doesn't collapse */
+  width: 100%;
+}
+
+.loading-chart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+  color: #2e7d32;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .chart-container {
+    padding: 1rem;
+  }
+  
+  .chart-wrapper {
+    height: 250px;
+  }
+}

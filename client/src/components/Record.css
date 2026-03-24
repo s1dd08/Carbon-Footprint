@@ -1,0 +1,30 @@
+.records{
+  margin-top:40px;
+}
+
+.records h2{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  background:white;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+th,td{
+  padding:12px;
+  text-align:center;
+  border-bottom:1px solid #eee;
+}
+
+th{
+  background:#2ecc71;
+  color:white;
+}
+
+tr:hover{
+  background:#f5f5f5;
+}
